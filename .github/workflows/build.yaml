@@ -48,7 +48,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": ${{vers.RAILWAY_URL}}
+                    "text": ${{vars.RAILWAY_URL}}
                   }
                 ]
               }
