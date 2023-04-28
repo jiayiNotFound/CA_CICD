@@ -60,7 +60,7 @@ jobs:
                       "emoji": true,
                       "text": "Go"
                     },
-                    "value": "${{vars.RAILWAY_URL}}"
+                    "url": "${{vars.RAILWAY_URL}}"
                   }
                 }
               ]
