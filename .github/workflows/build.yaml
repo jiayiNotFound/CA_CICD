@@ -3,10 +3,10 @@ on:
   push:
     branches:   
      - 'release/v*' 
-jobs:
-  build_go_bear:
     if: "!startsWith(github.event.head_commit.message, '#NORUN')"
 
+jobs:
+  build_go_bear:
     name: CA for CICD
     runs-on: ubuntu-latest
 
