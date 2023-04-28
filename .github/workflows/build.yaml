@@ -18,7 +18,7 @@ jobs:
       with:
         # This data can be any valid JSON from a previous step in the GitHub Action
         payload: |
-          {
+         {
             "blocks": [
               {
                 "type": "section",
@@ -48,11 +48,12 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": ${{vars.RAILWAY_URL}}
+                    "text": ${{vers.RAILWAY_URL}}
                   }
                 ]
               }
             ]
+          }
       env:
         SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
 
