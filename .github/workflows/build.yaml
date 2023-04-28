@@ -17,44 +17,55 @@ jobs:
       uses: slackapi/slack-github-action@v1.23.0
       with:
         # This data can be any valid JSON from a previous step in the GitHub Action
-        payload: |
-         {
-            "blocks": [
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "*DipSA 56 CI/CD Submission*"
-                }
-              },
-              {
-                "type": "section",
-                "fields": [
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Name:* LIU JIAYI"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Email:* e1112897@u.nus.edu"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Metriculation:* E1112897"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Repository:*\n "
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "${{vars.RAILWAY_URL}}"
-                  }
-                ]
+    payload: |
+        {
+          "blocks": [
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "*DipSA 56 CI/CD Submission*"
               }
-            ]
-          }
-
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Name:*  LIU JIAYI"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Email:*  e1112897@u.nus.edu"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Metriculation:*  E1112897"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Repository:*  ${{vars.REPO}}"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "${{vars.RAILWAY_URL}}"
+              },
+              "accessory": {
+                "type": "button",
+                "text": {
+                  "type": "plain_text",
+                  "emoji": true,
+                  "text": "Go"
+                },
+                "value": "${{vars.RAILWAY_URL}}"
+              }
+            }
+          ]
+        }
       env:
         SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
