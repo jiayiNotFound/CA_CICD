@@ -5,18 +5,20 @@ on:
      - 'release/v*' 
 jobs:
   build_go_bear:
+    if: "!startsWith(github.event.head_commit.message, '#NORUN')"
+
     name: CA for CICD
     runs-on: ubuntu-latest
 
     steps:
     - name: checkout your source
       uses: actions/checkout@v3
-    - name: cancel norun
-      run: |
-        if [[ $(git log --format=%B -n 1 ${{ github.sha }}) == "#NORUN"* ]]; then
-            echo "Commit message starts with #NORUN, skipping action."
-            exit 1
-          fi
+    # - name: cancel norun
+    #   run: |
+    #     if [[ $(git log --format=%B -n 1 ${{ github.sha }}) == "#NORUN"* ]]; then
+    #         echo "Commit message starts with #NORUN, skipping action."
+    #         exit 1
+    #       fi
     # - name: setup go 
     #   uses: actions/setup-go@v4
     #     with:
