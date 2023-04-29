@@ -45,7 +45,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Metriculation:*  E1112897"
+                      "text": "*Matriculation:*  A0269514X"
                     },
                     {
                       "type": "mrkdwn",
@@ -72,7 +72,7 @@ jobs:
               ]
             }
       env:
-        SLACK_WEBHOOK_URL: ${{secrets.SUBMIT}}
+        SLACK_WEBHOOK_URL: ${{secrets.TEST_SUBMIT}}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
 
