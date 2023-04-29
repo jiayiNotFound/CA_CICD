@@ -13,7 +13,7 @@ jobs:
     - name: checkout your source
       uses: actions/checkout@v3
     - name: railway up
-      action: railway up
+      run: railway up
     # - name: Send payload to Slack workflow
     #   id: slack
     #   uses: slackapi/slack-github-action@v1.23.0
