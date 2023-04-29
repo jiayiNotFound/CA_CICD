@@ -12,8 +12,11 @@ jobs:
     steps:
     - name: checkout your source
       uses: actions/checkout@v3
-    - name: railway up
-      run: railway up
+    - name: deploy railway  
+      uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{secrets.RAILWAY_TOKEN}}
+          service: smelly-scarecrow
     # - name: Send payload to Slack workflow
     #   id: slack
     #   uses: slackapi/slack-github-action@v1.23.0
