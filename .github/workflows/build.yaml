@@ -13,11 +13,11 @@ jobs:
     - name: checkout your source
       uses: actions/checkout@v3
     - name: deploy railway  
-    uses: bervProject/railway-deploy@main
-    env:
-      RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-    with:
-      service: "smelly-scarecrow"
+      uses: bervProject/railway-deploy@main
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      with:
+        service: "smelly-scarecrow"
 
 
     # - name: Send payload to Slack workflow
